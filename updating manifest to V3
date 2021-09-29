@@ -1,0 +1,29 @@
+// Manifest V3
+// Full content on how to update Manifest V2 file to Manifest V3:
+// https://blog.shahednasser.com/chrome-extension-tutorial-migrating-to-manifest-v3-from-v2/
+
+{
+    "name": "share extension",
+    "version": "0.0.1",
+    "description": "demo",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "demo.html",
+        "default_icon": "myicon.png"
+    }
+}
+
+// Rules change to V3 from V2
+// "permissions" to "host_permissions"
+// "broswer_action", "page_action" to "action" 
+// "script" to "service_worker"
+/* ------------example--------------
+...,
+"background": {
+    "service_worker": "asset/js/background.js"
+},
+...
+------------------------------------
+*/
+// Content Security Policy(CSP) from string to object
+// Changing web_accessiable_resources array to an object
